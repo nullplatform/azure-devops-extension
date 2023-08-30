@@ -30,7 +30,6 @@ class HttpClient {
                 headers: this.headers,
                 body: JSON.stringify(body)
             });
-            console.log(JSON.stringify(body));
             const statusCode = response.statusCode;
             const responseBody = yield response.body.json();
             yield this.client.close();
