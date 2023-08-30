@@ -3,7 +3,7 @@
     "id": "nullplatform-extension",
     "name": "Nullplatform Extension",
     "version": "0.0.1",
-    "publisher": "Nullplatform",
+    "publisher": "nullplatform",
     "targets": [
         {
             "id": "Microsoft.VisualStudio.Services"
