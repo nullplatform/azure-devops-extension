@@ -1,0 +1,36 @@
+{
+    "manifestVersion": 1,
+    "id": "nullplatform-extension",
+    "name": "Nullplatform Extension",
+    "version": "0.0.1",
+    "publisher": "Nullplatform",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "description": "Extension to integrate with Nullplatform.",
+    "categories": [
+        "Azure Pipelines"
+    ],
+    "icons": {
+        "default": "images/extension-icon.png"
+    },
+    "files": [
+        {
+            "path": "task-nullplatform-login"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "task-nullplatform-login",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "task-nullplatform-login"
+            }
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
+  "id": "01f664a9-78fb-4b5a-9094-9ecc7f296ee2",
+  "name": "NullplatformLogin",
+  "friendlyName": "Nullplatform Login",
+  "description": "Azure Devops task to automate the login process on Nullplatform",
+  "helpMarkDown": "",
+  "category": "Utility",
+  "author": "pablo.ilundain@nullplatform.io",
+  "version": {
+    "Major": 0,
+    "Minor": 1,
+    "Patch": 0
+  },
+  "instanceNameFormat": "Nullplatform Login",
+  "inputs": [
+    {
+      "name": "apiKey",
+      "type": "string",
+      "label": "nullplatform api key",
+      "required": true,
+      "helpMarkDown": "nullplatform api key"
+    }
+  ],
+  "execution": {
+    "Node": {
+      "target": "index.js"
+    }
+  }
+}
