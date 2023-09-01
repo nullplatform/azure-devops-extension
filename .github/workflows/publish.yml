@@ -26,6 +26,5 @@ jobs:
 
       - name: Publish to Azure DevOps Marketplace
         run: |
-          echo "//registry.npmjs.org/:_authToken=\${{ secrets.AZURE_DEVOPS_PAT }}" > ~/.npmrc
           npm install -g tfx-cli
-          tfx extension publish --root . --manifest-globs vss-extension.json
+          tfx extension publish --token ${{ secrets.AZURE_DEVOPS_PAT }} "--no-wait-validation" --manifest-globs vss-extension.json
