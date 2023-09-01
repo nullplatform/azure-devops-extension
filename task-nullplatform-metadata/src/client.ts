@@ -12,11 +12,13 @@ class HttpClient {
         this.client = new Client(config.baseUrl);
         this.headers = {
             'Content-type': 'application/json',
-            'Authorization': tl.getVariable(Variable.NULLPLATFORM_ACCESS_TOKEN) || ""
+            'Authorization': `Bearer ${tl.getVariable(Variable.NULLPLATFORM_ACCESS_TOKEN) || ""}`
         };
     }
 
     async get(path: string, query: any): Promise<any> {
+        console.log("token")
+        console.log(tl.getVariable(Variable.NULLPLATFORM_ACCESS_TOKEN))
         let url = path
         if (!isEmpty(query)) {
             url = `${url}?${query}`
