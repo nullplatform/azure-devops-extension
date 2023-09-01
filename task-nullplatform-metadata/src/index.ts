@@ -16,7 +16,7 @@ const inputToQuery = (input: any) => (!isEmpty(input) ? input.replace(/-/g, '_')
 const buildApplicationQuery = () => {
     const query: Record<string, string | undefined> = {};
     const name = tl.getInput(Input.NAME);
-    const repositoryUrl = tl.getInput(Input.CODE_REPOSITORY.URL) || tl.getVariable('BUILD_REPOSITORY_URI')
+    const repositoryUrl = tl.getInput(Input.CODE_REPOSITORY.URL) || buildRepositoryWebUrl(tl.getVariable('BUILD_REPOSITORY_URI') || "")
     console.log(repositoryUrl);
     const repositoryAppPath = tl.getInput(Input.CODE_REPOSITORY.APPLICATION_PATH);
     const status = tl.getInput(Input.STATUS);
@@ -37,6 +37,16 @@ const buildApplicationQuery = () => {
 
     return query;
 };
+
+const buildRepositoryWebUrl = (repositoryUri: string) => {
+    const regex = /(https:\/\/([\w-]+)@dev.azure.com\/([\w-]+)\/([\w-]+)\/_git\/([\w-]+))\s*https:\/\/dev.azure.com\/([\w-]+)\/([\w-]+)/;
+    const matches = repositoryUri.match(regex);
+    if (matches != null) {
+        const organizationName = matches[2];
+        const project = matches[4];
+        return `https://dev.azure.com/${organizationName}/${project}`;
+    }
+}
 
 // @ts-ignore
 const buildQuery = (resource: Resource) => {

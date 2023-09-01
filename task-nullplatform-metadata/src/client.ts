@@ -17,8 +17,6 @@ class HttpClient {
     }
 
     async get(path: string, query: any): Promise<any> {
-        console.log("token")
-        console.log(tl.getVariable(Variable.NULLPLATFORM_ACCESS_TOKEN))
         let url = path
         if (!isEmpty(query)) {
             url = `${url}?${query}`
