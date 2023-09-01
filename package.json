@@ -1,4 +1,7 @@
 {
   "private": true,
-  "name": "nullplatform-azure-devops-extension"
+  "name": "nullplatform-azure-devops-extension",
+  "scripts": {
+    "build": "tsc -p task-nullplatform-login"
+  }
 }
