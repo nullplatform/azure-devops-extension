@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "nullplatform-extension",
     "name": "Nullplatform Extension",
-    "version": "0.1.9",
+    "version": "0.1.10",
     "publisher": "nullplatform",
     "targets": [
         {
@@ -19,6 +19,9 @@
     "files": [
         {
             "path": "task-nullplatform-login"
+        },
+        {
+            "path": "task-nullplatform-metadata"
         }
     ],
     "contributions": [
