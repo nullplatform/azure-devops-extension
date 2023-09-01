@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "nullplatform-extension",
     "name": "Nullplatform Extension",
-    "version": "0.0.4",
+    "version": "0.1.7",
     "publisher": "nullplatform",
     "targets": [
         {
