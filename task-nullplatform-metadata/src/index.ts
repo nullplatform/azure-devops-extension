@@ -74,7 +74,7 @@ async function run() {
 
         if (isEmpty(resource)) {
             tl.setResult(tl.TaskResult.Failed, 'Input "resource" cannot be empty');
-        } else if (!isValidResource(resource)) {
+        } else if (!isValidResource(<string>resource)) {
             tl.setResult(tl.TaskResult.Failed, 'Input "resource" must be one of these valid resources: application, build, release, deployment');
         }
 
