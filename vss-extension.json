@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "nullplatform-extension",
     "name": "Nullplatform Extension",
-    "version": "0.1.10",
+    "version": "0.1.11",
     "publisher": "nullplatform",
     "targets": [
         {
@@ -33,6 +33,16 @@
             ],
             "properties": {
                 "name": "task-nullplatform-login"
+            }
+        },
+        {
+            "id": "task-nullplatform-metadata",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "task-nullplatform-metadata"
             }
         }
     ]
