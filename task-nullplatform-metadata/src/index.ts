@@ -82,7 +82,7 @@ async function run() {
         console.info(`Getting Nullplatform metadata for ${resource} resource with query: ${query}...`);
 
         if (resource != null) {
-            const result = await client.get(`${resource}`, query);
+            const result = await client.get(`/${resource}`, query);
             console.info(`Successfully queried ${resource} resource, got ${result.length} results`);
             tl.setVariable(Output.METADATA, result, false, true);
         }
