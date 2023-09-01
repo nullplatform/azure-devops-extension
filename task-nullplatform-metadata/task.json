@@ -1,0 +1,58 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
+  "id": "124a453e-28ac-4a99-9bf8-d1e6ffdade06",
+  "name": "NullplatformMetadata",
+  "friendlyName": "Nullplatform Metadata",
+  "description": "Azure Devops task for query Nullplatform metadata",
+  "helpMarkDown": "Azure Devops task for query Nullplatform metadata",
+  "category": "Utility",
+  "author": "pablo.ilundain@nullplatform.io",
+  "version": {
+    "Major": 0,
+    "Minor": 0,
+    "Patch": 1
+  },
+  "instanceNameFormat": "Nullplatform Metadata",
+  "inputs": [
+    {
+      "name": "resource",
+      "type": "string",
+      "label": "nullplatform resource to query",
+      "required": true,
+      "helpMarkDown": "nullplatform resource to query. One of: application, build, asset, release, deployment"
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "label": "application name",
+      "required": false,
+      "helpMarkDown": "Application name"
+    },
+    {
+      "name": "status",
+      "type": "string",
+      "label": "application status",
+      "required": false,
+      "helpMarkDown": "Application status"
+    },
+    {
+      "name": "codeRepositoryUrl",
+      "type": "string",
+      "label": "Application code repository URL",
+      "required": false,
+      "helpMarkDown": "Application code repository URL"
+    },
+    {
+      "name": "codeRepositoryApplicationPath",
+      "type": "string",
+      "label": "Application code repository path inside a monorepo",
+      "required": false,
+      "helpMarkDown": "Application code repository path inside a monorepo"
+    }
+  ],
+  "execution": {
+    "Node16": {
+      "target": "dist/index.js"
+    }
+  }
+}
