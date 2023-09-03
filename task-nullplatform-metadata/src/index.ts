@@ -39,13 +39,9 @@ const buildApplicationQuery = () => {
 };
 
 const buildRepositoryWebUrl = (repositoryUri: string) => {
-    const regex = /(https:\/\/([\w-]+)@dev.azure.com\/([\w-]+)\/([\w-]+)\/_git\/([\w-]+))\s*https:\/\/dev.azure.com\/([\w-]+)\/([\w-]+)/;
-    const matches = repositoryUri.match(regex);
-    if (matches != null) {
-        const organizationName = matches[2];
-        const project = matches[4];
-        return `https://dev.azure.com/${organizationName}/${project}`;
-    }
+    const repositoryUrl = repositoryUri.split('/').slice(0, -2).join('/');
+    const parsedUrl = new URL(repositoryUrl);
+    return `https://${parsedUrl.hostname}${parsedUrl.pathname}`;
 }
 
 // @ts-ignore
