@@ -22,6 +22,9 @@
         },
         {
             "path": "task-nullplatform-metadata"
+        },
+        {
+            "path": "task-nullplatform-build"
         }
     ],
     "contributions": [
@@ -43,6 +46,16 @@
             ],
             "properties": {
                 "name": "task-nullplatform-metadata"
+            }
+        },
+        {
+            "id": "task-nullplatform-build",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "task-nullplatform-build"
             }
         }
     ]

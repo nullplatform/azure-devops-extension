@@ -1,0 +1,100 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
+  "id": "23a636c4-7ace-42e9-95eb-ee104d5f438e",
+  "name": "NullplatformBuild",
+  "friendlyName": "Nullplatform Build",
+  "description": "Azure Devops task to manage a build in Nullplatform",
+  "helpMarkDown": "Azure Devops task to manage a build in Nullplatform",
+  "category": "Utility",
+  "author": "pablo.ilundain@nullplatform.io",
+  "version": {
+    "Major": 0,
+    "Minor": 0,
+    "Patch": 1
+  },
+  "instanceNameFormat": "Nullplatform Build",
+  "inputs": [
+    {
+      "name": "action",
+      "type": "string",
+      "label": "build action",
+      "required": false,
+      "helpMarkDown": "The build action controls what happens to the build. Can be one of: create, update"
+    },
+    {
+      "name": "id",
+      "type": "string",
+      "label": "build id",
+      "required": false,
+      "helpMarkDown": "The build id"
+    },
+    {
+      "name": "status",
+      "type": "string",
+      "label": "build status",
+      "required": false,
+      "helpMarkDown": "The build status. Can be one of: 'pending', 'in_progress', 'failed', 'successful'"
+    },
+    {
+      "name": "applicationId",
+      "type": "string",
+      "label": "Application id",
+      "required": false,
+      "helpMarkDown": "The application id to build"
+    },
+    {
+      "name": "commitId",
+      "type": "string",
+      "label": "SHA commit",
+      "required": false,
+      "helpMarkDown": "The SHA commit"
+    },
+    {
+      "name": "commitPermalink",
+      "type": "string",
+      "label": "The commit web link",
+      "required": false,
+      "helpMarkDown": "The commit web link"
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "label": "The build description",
+      "required": false,
+      "helpMarkDown": "The build description. Defaults to commit message"
+    },
+    {
+      "name": "branch",
+      "type": "string",
+      "label": "The build branch",
+      "required": false,
+      "helpMarkDown": "TThe build branch. Defaults to current workflow execution branch"
+    },
+    {
+      "name": "imageRepositoryUrl",
+      "type": "string",
+      "label": "The image repository URL wheres the build image was uploaded",
+      "required": false,
+      "helpMarkDown": "The image repository URL wheres the build image was uploaded"
+    }
+  ],
+  "outputVariables": [
+    {
+      "name": "id",
+      "description": "The build id."
+    },
+    {
+      "name": "status",
+      "description": "The new build status. Can be one of: 'pending', 'in_progress', 'failed', 'successful'"
+    },
+    {
+      "name": "applicationId",
+      "description": "The application id built"
+    }
+  ],
+  "execution": {
+    "Node16": {
+      "target": "dist/index.js"
+    }
+  }
+}
