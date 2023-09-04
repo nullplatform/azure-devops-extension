@@ -52,7 +52,7 @@ class HttpClient {
         await this.client.close();
 
         if (statusCode !== 200) {
-            throw new Error(`POST to ${path} failed: [${statusCode}] - ${responseBody}`);
+            throw new Error(`POST to ${path} failed: [${statusCode}] - ${JSON.stringify(responseBody)}`);
         }
 
         return responseBody;

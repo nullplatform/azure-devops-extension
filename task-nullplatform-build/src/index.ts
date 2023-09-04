@@ -64,6 +64,8 @@ const createBuild = (): Promise<any> => {
         branch,
     };
 
+    console.log(JSON.stringify(body));
+
     return client.post('/build', body);
 };
 
