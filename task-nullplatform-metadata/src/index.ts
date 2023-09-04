@@ -17,7 +17,6 @@ const buildApplicationQuery = () => {
     const query: Record<string, string | undefined> = {};
     const name = tl.getInput(Input.NAME);
     const repositoryUrl = tl.getInput(Input.CODE_REPOSITORY.URL) || buildRepositoryWebUrl(tl.getVariable('BUILD_REPOSITORY_URI') || "")
-    console.log(repositoryUrl);
     const repositoryAppPath = tl.getInput(Input.CODE_REPOSITORY.APPLICATION_PATH);
     const status = tl.getInput(Input.STATUS);
 
@@ -90,7 +89,7 @@ async function run() {
         if (resource != null) {
             const result = await client.get(`/${resource}`, query);
             console.info(`Successfully queried ${resource} resource, got ${result.length} results`);
-            tl.setVariable(Output.METADATA, JSON.stringify(JSON.stringify(result)), false, true);
+            tl.setVariable(Output.METADATA, JSON.stringify(result), false, true);
         }
     } catch (err) {
         if (err instanceof Error) {
