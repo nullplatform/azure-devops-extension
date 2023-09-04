@@ -14,18 +14,18 @@ export const Input = Object.freeze({
     ACTION: 'action',
     ID: 'id',
     STATUS: 'status',
-    APPLICATION_ID: 'application-id',
-    COMMIT_ID: 'commit-id',
-    COMMIT_PERMALINK: 'commit-permalink',
+    APPLICATION_ID: 'applicationId',
+    COMMIT_ID: 'commitId',
+    COMMIT_PERMALINK: 'commitPermalink',
     DESCRIPTION: 'description',
     BRANCH: 'branch',
-    IMAGE_REPOSITORY_URL: 'image-repository-url',
+    IMAGE_REPOSITORY_URL: 'imageRepositoryUrl',
 });
 
 export const Output = Object.freeze({
     ID: 'id',
     STATUS: 'status',
-    APPLICATION_ID: 'application-id',
+    APPLICATION_ID: 'applicationId',
 });
 
 export const Variable = Object.freeze({
