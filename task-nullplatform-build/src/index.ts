@@ -22,7 +22,7 @@ const createBuild = (): Promise<any> => {
 
     const status = BuildStatus.IN_PROGRESS;
     const applicationId: string = tl.getInput(Input.APPLICATION_ID) || "";
-    const commitId: string = tl.getInput(Input.COMMIT_ID) || tl.getVariable('BUILD_SOURCE_VERSION') || "";
+    const commitId: string = tl.getInput(Input.COMMIT_ID) || tl.getVariable('BUILD_SOURCEVERSION') || "";
     const commitPermalink: string = tl.getInput(Input.COMMIT_PERMALINK)
         || `${buildRepositoryCommitWebUrl(tl.getVariable('BUILD_REPOSITORY_URI') || "")}/${tl.getVariable('BUILD_SOURCEVERSION') || ""}`;
     const description: string = tl.getInput(Input.DESCRIPTION)
