@@ -90,7 +90,7 @@ async function run() {
         if (resource != null) {
             const result = await client.get(`/${resource}`, query);
             console.info(`Successfully queried ${resource} resource, got ${result.length} results`);
-            tl.setVariable(Output.METADATA, result, false, true);
+            tl.setVariable(Output.METADATA, JSON.stringify(result), false, true);
         }
     } catch (err) {
         if (err instanceof Error) {
