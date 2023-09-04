@@ -64,7 +64,7 @@ const createBuild = (): Promise<any> => {
         branch,
     };
 
-    return client.post('build', body);
+    return client.post('/build', body);
 };
 
 const updateBuild = async (): Promise<any> => {
@@ -87,7 +87,7 @@ const updateBuild = async (): Promise<any> => {
         status,
     };
 
-    return await client.patch(`build/${id}`, body);
+    return await client.patch(`/build/${id}`, body);
 };
 
 
