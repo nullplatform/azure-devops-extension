@@ -1,0 +1,22 @@
+{
+  "name": "azure-devops-task-parameter",
+  "scripts": {
+    "build": "tsc --project ./tsconfig.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": "^16.0.0"
+  },
+  "dependencies": {
+    "azure-pipelines-task-lib": "^4.5.0",
+    "undici": "^5.23.0",
+    "dotenv": "16.3.1"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^20.5.7",
+    "@types/q": "^1.5.5",
+    "sync-request": "^6.1.0"
+  }
+}

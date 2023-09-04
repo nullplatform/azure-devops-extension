@@ -1,0 +1,37 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
+  "id": "0e5b825b-51d4-4bd9-8008-f76b73f699fe",
+  "name": "NullplatformParameter",
+  "friendlyName": "Nullplatform Parameter",
+  "description": "Azure Devops task for query Nullplatform application build parameters",
+  "helpMarkDown": "Azure Devops task for query Nullplatform application build parameters",
+  "category": "Utility",
+  "author": "pablo.ilundain@nullplatform.io",
+  "version": {
+    "Major": 0,
+    "Minor": 0,
+    "Patch": 1
+  },
+  "instanceNameFormat": "Nullplatform Parameter",
+  "inputs": [
+    {
+      "name": "applicationId",
+      "type": "string",
+      "label": "The application id to query build parameters",
+      "required": true,
+      "helpMarkDown": "The application id to query build parameters"
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "label": "The parameter name to query",
+      "required": false,
+      "helpMarkDown": "The parameter name to query"
+    }
+  ],
+  "execution": {
+    "Node16": {
+      "target": "dist/index.js"
+    }
+  }
+}
