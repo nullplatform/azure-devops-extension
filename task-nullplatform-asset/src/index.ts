@@ -20,7 +20,7 @@ const createAsset = () => {
     console.info('Validating inputs...');
 
     const buildId = tl.getInput(Input.BUILD_ID) || "";
-    const name = tl.getInput(Input.NAME);
+    const name = tl.getInput(Input.NAME) || "main";
     const type = tl.getInput(Input.TYPE);
     const url = tl.getInput(Input.URL);
 
@@ -49,7 +49,7 @@ const createAsset = () => {
     if (!isEmpty(name)) {
         body[inputToKey(Input.NAME)] = name;
     }
-    
+
     return client.post(`/build/${buildId}/asset`, body);
 };
 
