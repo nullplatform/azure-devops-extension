@@ -24,8 +24,6 @@ const createAsset = () => {
     const type = tl.getInput(Input.TYPE);
     const url = tl.getInput(Input.URL);
 
-    console.log((buildId))
-
     if (isEmpty(buildId)) {
         setFailed(`Input "${Input.BUILD_ID}" cannot be empty`);
     }
@@ -51,8 +49,7 @@ const createAsset = () => {
     if (!isEmpty(name)) {
         body[inputToKey(Input.NAME)] = name;
     }
-
-    console.log(body);
+    
     return client.post(`/build/${buildId}/asset`, body);
 };
 
