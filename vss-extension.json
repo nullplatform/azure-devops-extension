@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "nullplatform-extension",
     "name": "Nullplatform Extension",
-    "version": "0.1.25",
+    "version": "0.1.26",
     "publisher": "nullplatform",
     "targets": [
         {
@@ -28,6 +28,9 @@
         },
         {
             "path": "task-nullplatform-parameter"
+        },
+        {
+            "path": "task-nullplatform-asset"
         }
     ],
     "contributions": [
@@ -69,6 +72,16 @@
             ],
             "properties": {
                 "name": "task-nullplatform-parameter"
+            }
+        },
+        {
+            "id": "task-nullplatform-asset",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "task-nullplatform-asset"
             }
         }
     ]

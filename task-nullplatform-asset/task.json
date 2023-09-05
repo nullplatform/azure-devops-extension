@@ -1,0 +1,91 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
+  "id": "5b3b8275-0973-426c-bc65-182c88d59e23",
+  "name": "NullplatformAsset",
+  "friendlyName": "Nullplatform Asset",
+  "description": "Azure Devops task for asset management on Nullplatform",
+  "helpMarkDown": "Azure Devops task for asset management on Nullplatform",
+  "category": "Utility",
+  "author": "pablo.ilundain@nullplatform.io",
+  "version": {
+    "Major": 0,
+    "Minor": 0,
+    "Patch": 5
+  },
+  "instanceNameFormat": "Nullplatform Asset",
+  "inputs": [
+    {
+      "name": "action",
+      "type": "string",
+      "label": "asset action",
+      "required": false,
+      "helpMarkDown": "The asset action controls what happens to the asset. Can be one of: create, update"
+    },
+    {
+      "name": "buildId",
+      "type": "string",
+      "label": "build id",
+      "required": true,
+      "helpMarkDown": "The build id where this asset belongs to"
+    },
+    {
+      "name": "type",
+      "type": "string",
+      "label": "asset type",
+      "required": true,
+      "helpMarkDown": "Asset type, could be docker-image, lambda, etc"
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "label": "Asset name, by default 'main'",
+      "required": false,
+      "helpMarkDown": "Asset name, by default 'main'"
+    },
+    {
+      "name": "metadata",
+      "type": "string",
+      "label": "asset metadata",
+      "required": false,
+      "helpMarkDown": "asset metadata, format is: <key>:<value>"
+    },
+    {
+      "name": "url",
+      "type": "string",
+      "label": "Predefined asset URL",
+      "required": false,
+      "helpMarkDown": "Predefined asset URL. This is an advanced usage and is not recommended, use *type* and *name* instead"
+    }
+  ],
+  "outputVariables": [
+    {
+      "name": "id",
+      "description": "The asset id"
+    },
+    {
+      "name": "buildId",
+      "description": "The build id associated to the asset"
+    },
+    {
+      "name": "name",
+      "description": "The asset name. Identifies an asset to deploy"
+    },
+    {
+      "name": "type",
+      "description": "The asset type. Could be docker-image, lambda, etc."
+    },
+    {
+      "name": "targets",
+      "description": "The asset targets. This is an array containing a collection of urls by provider where the asset must be uploaded"
+    },
+    {
+      "name": "metadata",
+      "description": "The asset associated metadata. This is a key-value object"
+    }
+  ],
+  "execution": {
+    "Node16": {
+      "target": "dist/index.js"
+    }
+  }
+}
