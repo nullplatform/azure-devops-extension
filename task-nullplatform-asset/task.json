@@ -10,7 +10,7 @@
   "version": {
     "Major": 0,
     "Minor": 0,
-    "Patch": 9
+    "Patch": 10
   },
   "instanceNameFormat": "Nullplatform Asset",
   "inputs": [
@@ -76,7 +76,7 @@
     },
     {
       "name": "targets",
-      "description": "The asset targets. This is an array containing a collection of urls by provider where the asset must be uploaded"
+      "description": "The asset targets. This is a json string containing a collection of urls by provider where the asset must be uploaded"
     },
     {
       "name": "metadata",

@@ -78,7 +78,7 @@ async function run() {
         tl.setVariable(Output.BUILD_ID, buildId);
         tl.setVariable(Output.NAME, name);
         tl.setVariable(Output.TYPE, type);
-        tl.setVariable(Output.TARGETS, targets);
+        tl.setVariable(Output.TARGETS, JSON.stringify(targets));
         tl.setVariable(Output.METADATA, metadata);
     } catch (err) {
         if (err instanceof Error) {
