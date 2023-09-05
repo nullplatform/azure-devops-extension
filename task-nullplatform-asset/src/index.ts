@@ -50,6 +50,7 @@ const createAsset = () => {
         body[inputToKey(Input.NAME)] = name;
     }
 
+    console.log(body);
     return client.post(`/build/${buildId}/asset`, body);
 };
 

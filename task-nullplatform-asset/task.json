@@ -10,7 +10,7 @@
   "version": {
     "Major": 0,
     "Minor": 0,
-    "Patch": 5
+    "Patch": 6
   },
   "instanceNameFormat": "Nullplatform Asset",
   "inputs": [
@@ -18,7 +18,7 @@
       "name": "action",
       "type": "string",
       "label": "asset action",
-      "required": false,
+      "required": true,
       "helpMarkDown": "The asset action controls what happens to the asset. Can be one of: create, update"
     },
     {
