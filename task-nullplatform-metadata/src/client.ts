@@ -29,7 +29,6 @@ class HttpClient {
 
         const statusCode = response.statusCode;
         const responseBody = await response.body.json();
-        console.log(responseBody);
         await this.client.close();
 
         if (statusCode !== 200) {
