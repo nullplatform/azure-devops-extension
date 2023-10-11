@@ -16,7 +16,7 @@ const inputToQuery = (input: any) => (!isEmpty(input) ? input.replace(/-/g, '_')
 const buildApplicationQuery = () => {
     const query: Record<string, string | undefined> = {};
     const name = tl.getInput(Input.NAME);
-    const repositoryUrl = tl.getInput(Input.CODE_REPOSITORY.URL) || buildRepositoryWebUrl(tl.getVariable('BUILD_REPOSITORY_URI') || "")
+    const repositoryUrl = tl.getInput(Input.CODE_REPOSITORY.URL) || tl.getVariable('BUILD_REPOSITORY_URI');
     const repositoryAppPath = tl.getInput(Input.CODE_REPOSITORY.APPLICATION_PATH);
     const status = tl.getInput(Input.STATUS);
 
@@ -36,12 +36,6 @@ const buildApplicationQuery = () => {
 
     return query;
 };
-
-const buildRepositoryWebUrl = (repositoryUri: string) => {
-    const repositoryUrl = repositoryUri.split('/').slice(0, -2).join('/');
-    const parsedUrl = new URL(repositoryUrl);
-    return `https://${parsedUrl.hostname}${parsedUrl.pathname}`;
-}
 
 // @ts-ignore
 const buildQuery = (resource: Resource) => {
